@@ -29,7 +29,7 @@
             inherit inputs self;
           };
           #TODO export this from a toplevel login-users module
-          users.FIRST_NAME = {
+          users.croom = {
             imports = [ (import ../home/home-client.nix) ] ++ [ inputs.nix-index-database.hmModules.nix-index ];
           };
         };
@@ -81,7 +81,7 @@
         build-users-group = "nixbld";
         trusted-users = [
           "root"
-          "FIRST_NAME"
+          "croom"
         ];
         auto-optimise-store = true; # Optimise syslinks
         keep-outputs = true; # Keep outputs of derivations
@@ -115,8 +115,8 @@
           ];
           mandatoryFeatures = [ ];
           #TODO Fix this
-          sshUser = "FIRST_NAME";
-          sshKey = "/home/FIRST_NAME/.ssh/builder-key";
+          sshUser = "croom";
+          sshKey = "/home/croom/.ssh/builder-key";
         }
         {
           hostName = "vedenemo-builder";
@@ -131,8 +131,8 @@
           ];
           mandatoryFeatures = [ ];
           #TODO Fix this
-          sshUser = "FIRST_NAME";
-          sshKey = "/home/FIRST_NAME/.ssh/builder-key";
+          sshUser = "croom";
+          sshKey = "/home/croom/.ssh/builder-key";
         }
       ];
 
@@ -165,11 +165,11 @@
                hostname 192.168.100.3
                proxyjump ghaf-net
           host hetzarm
-               user FIRST_NAME
+               user croom
                HostName 65.21.20.242
                IdentityFile ~/.ssh/builder-key
           host vedenemo-builder
-               user FIRST_NAME
+               user croom
                hostname builder.vedenemo.dev
                IdentityFile ~/.ssh/builder-key
         '';

@@ -11,7 +11,7 @@
     common-client = import ./common.nix;
 
     # host modules
-    host-HOSTNAME = import ./HOSTNAME;
+    host-croom = import ./croom;
   };
 
   flake.nixosConfigurations =
@@ -22,9 +22,9 @@
       };
     in
     {
-      HOSTNAME = lib.nixosSystem {
+      croom = lib.nixosSystem {
         inherit specialArgs;
-        modules = [ self.nixosModules.host-HOSTNAME ];
+        modules = [ self.nixosModules.host-croom ];
       };
     };
 }
