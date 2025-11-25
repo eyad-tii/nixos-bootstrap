@@ -4,32 +4,20 @@
 
   programs = {
     git = {
-      package = pkgs.gitAndTools.gitFull;
+      #package = pkgs.gitAndTools.gitFull;
       enable = true;
-      userName = "FULLNAME";
-      userEmail = "EMAIL";
+      settings = {
+        user = {
+          name = "FULLNAME";
+          email = "EMAIL";
+        };
 
-      aliases = {
-        checkout-pr = "!pr() { git fetch origin pull/$1/head:pr-$1; git checkout pr-$1; }; pr";
-        pick-pr = "!am() { git fetch origin pull/$1/head:pr-$1; git cherry-pick HEAD..pr-$1; }; am";
-        reset-pr = "reset --hard FETCH_HEAD";
-      };
-      delta.enable = true; # see diff in a new light
-      delta.options = {
-        line-numbers = true;
-        side-by-side = true;
-        syntax-theme = "Dracula";
-      };
-      ignores = [
-        "*~"
-        "*.swp"
-        ".worktrees/"
-      ];
-      signing = {
-        format = "ssh";
-        signByDefault = true;
-      };
-      extraConfig = {
+        aliases = {
+          checkout-pr = "!pr() { git fetch origin pull/$1/head:pr-$1; git checkout pr-$1; }; pr";
+          pick-pr = "!am() { git fetch origin pull/$1/head:pr-$1; git cherry-pick HEAD..pr-$1; }; am";
+          reset-pr = "reset --hard FETCH_HEAD";
+        };
+
         color.ui = "auto";
         checkout.defaultRemote = "origin";
         format.signoff = true;
@@ -42,6 +30,26 @@
         pull.rebase = "true";
         push.default = "current";
         github.user = "GITHUB_USERNAME";
+      };
+
+      ignores = [
+        "*~"
+        "*.swp"
+        ".worktrees/"
+      ];
+
+      signing = {
+        format = "ssh";
+        signByDefault = true;
+      };
+    };
+
+    delta = {
+      enable = true; # see diff in a new light
+      options = {
+        line-numbers = true;
+        side-by-side = true;
+        syntax-theme = "Dracula";
       };
     };
 

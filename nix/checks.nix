@@ -1,2 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
-_: { perSystem = _: { checks = { }; }; }
+# Checks are now defined in tests/default.nix
+_: {
+  perSystem = _: { };
+}
