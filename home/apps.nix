@@ -5,6 +5,7 @@
     slack
     element-desktop
     zoom-us
+    firefox
     google-chrome
 
     # Development
@@ -15,7 +16,7 @@
     cmake
     coreutils
     gnumake
-    nodePackages_latest.nodejs
+    nodejs
     llvm
     gcc
     nixos-generators

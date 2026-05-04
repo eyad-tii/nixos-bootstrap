@@ -3,8 +3,8 @@
   home.packages = with pkgs; [
     #Modern Linux tools
     cheat
-    delta
-    dogdns # DNS client
+    #dogdns # DNS client
+    doggo
     #df replacement duf
     duf
     #du replacement dust

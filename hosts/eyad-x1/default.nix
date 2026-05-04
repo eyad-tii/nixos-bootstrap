@@ -53,7 +53,7 @@
   networking = {
 
     # Define your hostname
-    hostName = lib.mkDefault "HOSTNAME";
+    hostName = lib.mkDefault "eyad-x1";
 
     enableIPv6 = false;
     nftables.enable = true;

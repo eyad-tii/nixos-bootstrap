@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    nixfmt-rfc-style
+    nixfmt
     cachix
     wget
     curl

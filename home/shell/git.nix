@@ -8,8 +8,8 @@
       enable = true;
       settings = {
         user = {
-          name = "FULLNAME";
-          email = "EMAIL";
+          name = "Eyad Shaklab";
+          email = "eyad.shaklab@tii.ae";
         };
 
         aliases = {
@@ -29,7 +29,7 @@
         init.defaultBranch = "main";
         pull.rebase = "true";
         push.default = "current";
-        github.user = "GITHUB_USERNAME";
+        github.user = "eyad-tii";
       };
 
       ignores = [
@@ -60,8 +60,8 @@
         gh-eco
         gh-dash
         gh-markdown-preview
-        gh-copilot
         gh-f
+	github-copilot-cli
       ];
     };
 

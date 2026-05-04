@@ -29,7 +29,7 @@
             inherit inputs self;
           };
 
-          users.FIRST_NAME = {
+          users.eyad = {
             imports = [
               (import ../home/home-client.nix)
             ]
@@ -84,7 +84,7 @@
         build-users-group = "nixbld";
         trusted-users = [
           "root"
-          "FIRST_NAME"
+          "eyad"
         ];
         auto-optimise-store = true; # Optimise syslinks
         keep-outputs = true; # Keep outputs of derivations
@@ -117,8 +117,8 @@
             "kvm"
           ];
           mandatoryFeatures = [ ];
-          sshUser = "FIRST_NAME";
-          sshKey = "/home/FIRST_NAME/.ssh/builder-key";
+          sshUser = "eyad";
+          sshKey = "/home/eyad/.ssh/builder-key";
         }
         {
           hostName = "vedenemo-builder";
@@ -132,8 +132,8 @@
             "kvm"
           ];
           mandatoryFeatures = [ ];
-          sshUser = "FIRST_NAME";
-          sshKey = "/home/FIRST_NAME/.ssh/builder-key";
+          sshUser = "eyad";
+          sshKey = "/home/eyad/.ssh/builder-key";
         }
       ];
 
@@ -169,11 +169,11 @@
                hostname 192.168.100.3
                proxyjump ghaf-netvm
           host hetzarm
-               user FIRST_NAME
+               user eyad
                HostName 65.21.20.242
                IdentityFile ~/.ssh/builder-key
           host vedenemo-builder
-               user FIRST_NAME
+               user eyad
                hostname builder.vedenemo.dev
                IdentityFile ~/.ssh/builder-key
         '';

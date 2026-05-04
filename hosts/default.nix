@@ -11,7 +11,7 @@
     common-client = import ./common.nix;
 
     # host modules
-    host-HOSTNAME = import ./HOSTNAME;
+    host-eyad-x1 = import ./eyad-x1;
   };
 
   flake.nixosConfigurations =
@@ -22,9 +22,9 @@
       };
     in
     {
-      HOSTNAME = lib.nixosSystem {
+      eyad-x1 = lib.nixosSystem {
         inherit specialArgs;
-        modules = [ self.nixosModules.host-HOSTNAME ];
+        modules = [ self.nixosModules.host-eyad-x1 ];
       };
     };
 }
