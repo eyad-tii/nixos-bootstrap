@@ -61,7 +61,7 @@
         gh-dash
         gh-markdown-preview
         gh-f
-	github-copilot-cli
+        github-copilot-cli
       ];
     };
 
